@@ -19,12 +19,14 @@ train_transform = v2.Compose([
 
 val_transform = v2.Compose([
     v2.Resize((224, 224)),
-    v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)]) # ToTensor()
+    v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)]), # ToTensor()
+    # v2.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])  # Normalize
 ])
 
 test_transform = v2.Compose([
     v2.Resize((224, 224)),
-    v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)]) # ToTensor()
+    v2.Compose([v2.ToImage(), v2.ToDtype(torch.float32, scale=True)]), # ToTensor()
+    # v2.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])  # Normalize
 ])
 
 train_dataset = datasets.ImageFolder(root=path, transform=train_transform)
