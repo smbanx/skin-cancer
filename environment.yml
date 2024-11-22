@@ -1,0 +1,14 @@
+# create environment with conda env create -f environment.yml -n <ENVIRONMENT_NAME>
+name: scancer-env
+channels:
+  - defaults
+  - conda-forge
+  - nvidia
+dependencies:
+  - pip
+  - pip:
+      - kagglehub
+      - torch=2.2.1
+      - torchvision=0.17.1
+      - numpy=1.17.4
+      - tqdm
