@@ -3,12 +3,14 @@ name: scancer-env
 channels:
   - defaults
   - conda-forge
-  - nvidia
 dependencies:
   - pip
   - pip:
       - kagglehub
+      - pandas=0.25.3
+      - sklearn
       - torch=2.2.1
       - torchvision=0.17.1
       - numpy=1.17.4
+      - timm=1.0.7
       - tqdm
